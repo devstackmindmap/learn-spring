@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class MemberServiceImpl implements MemberService {
 
     // DIP 위반 (MemoryMemberRepository 할당)
-    private MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
     @Autowired // ac.getBean(MemberRepository.class)
     public MemberServiceImpl(MemberRepository memberRepository) {
