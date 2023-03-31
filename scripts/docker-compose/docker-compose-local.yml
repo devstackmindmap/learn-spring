@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  learn-spring-db:
+    platform: linux/amd64
+    image: mariadb:10.10.2
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: leapeHxTWGsesRC00lJn
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: leapeHxTWGsesRC00lJn
+      MYSQL_DATABASE: learn-spring-db
+    ports:
+      - 44559:3306
+    volumes:
+      - ../../../../db/conf.d:/etc/mysql/conf.d
+      - ../../../../db/data:/var/lib/mysql
+      - ../../../../db/initdb.d:/docker-entrypoint-initdb.d
